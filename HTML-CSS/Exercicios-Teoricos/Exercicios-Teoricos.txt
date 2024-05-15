@@ -1,0 +1,47 @@
+HTML e CSS
+Exercício Teórico:
+1. O que são tags semânticas? Por que devemos utilizá-las? Dê exemplos de tags
+semânticas.
+Elas sao as partes estruturais do site de onde as outras estarao dentro, sem elas o site nao funcionaria corretamente.
+<header>
+<footer>
+<main>
+
+2. O que são elementos inline? Dê exemplos
+Como o nome diz sao elementos adcionados na linha para dar certas caracteristicas a partes dentro de blocos
+style, href, color, type, rel
+
+3. O que são elementos block level? Dê exemplos
+Em contraste com as inline, as block sao todos os elementos divididos normalmente com uma tag no começo e outra com barra no fim "/"
+<p>
+	AAAAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAexemplo
+</p>
+
+4. Descreva a utilização do atributo ‘alt’ em imagens no HTML e por que é importante
+utilizar esse atributo.
+E utilizado para dar descrição a uma imagem, essa so apareceria se a imagem tivesse um problema que a imagem nao aparecesse o conteudo do alt apareceria.
+
+5. Explique o conceito de herança em CSS. Dê exemplo utilizando a propriedade
+‘color’.
+Em um elemento <p> por exemplo, alguma edição do elemento p em css vai alterar ele totalmente,
+p { 
+	color:red
+}
+mas se um elemento inline estiver dentro de p o mesmo nao sera alterado
+<p> AAAAAAaaA<em> texto differente</em> AAAaa. </p>
+nesse caso o em nao tera o texto vermelho.
+
+6. Explique o que é BEM (Block Element Modifier)
+É uma metodologia de organização dentro das classes CSS do HTML partindo do principio Block Elemento e depois Modificador
+
+7. Explique e dê exemplos a diferença entre medidas absolutas e relativas
+Medidas Absolutas sao atributos a elementos como o tamanho em pixel, centimetro ou metro, elas nao mudao de dispositivo a dispositivo
+As Relativas porem, mudam de disposito a dispositivo, relativas, como porcentagem, que leva em consideração o tamanho da pagina e
+em e rem que se baseam em outros textos para moldarem seu tamanho.
+
+8. Explique o que é a unidade de medida Vw (viewport width) e Vh (viewport height) e a
+diferença entre elas.
+viewport e o nome dado a totalidade da tela de exibição de qualquer dispositivo. a Width e a largura, e a Height é a altura
+

@@ -1,0 +1,135 @@
+@import url();
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #fcc2f4;
+    
+
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #fcc2f4;
+    
+
+}
+
+ul{
+    list-style-type: none;
+    padding: 10% 0%;
+    padding-bottom: 20%;
+
+}
+.xtyle__header__logo{
+    height: 100px;
+    padding: 1%;
+    border-radius: 16px;
+
+}
+
+.xtlye__header__links{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 200px;
+
+}
+
+.xtlye__header__links__link{
+    text-decoration: none;
+    color: #210f14;
+    font-size: 35px;
+    background-color: #f95d84 ;
+    width: 120px;
+    text-align: center;
+    border-radius: 16px;
+    
+}
+.xtyle{
+    margin: 0.5% 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.xtyle__titulo__titulos{
+    font-size: 45px;
+    text-align: center;
+    padding: 3%;
+   
+}
+.xtyle__titulo__img{
+    display: flex;
+    width: 1200px;
+    border: #fcc2f4 solid 3px;
+    border-radius: 16px;
+
+}
+.xtyle__sobre{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.xtyle__sobre__titulo{
+    font-size: 45px;
+    padding: 3%;
+    
+
+}
+.xtyle__sobre__conteudo{
+    font-size: 25px;
+    text-align: justify;
+    border: 2px solid #fcc2f4;
+    width: 1200px;
+    padding: 2%;
+    border-radius: 16px;
+
+}
+.xtyle__planos{
+    display: flex;
+    align-content: center;
+    flex-flow: column wrap
+}
+.xtyle__planos__titulo{
+    font-size: 45px;
+    padding: 3%;
+    text-align: center;
+
+}
+.xtyle__planos__conteudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1200px;
+
+}
+.xtyle__planos__titulo__lista{
+    font-size: 30px;
+    border: solid;
+    text-align: center;
+    width: 15%;
+    padding-top: 1%;
+    
+}
+.xtyle__plano__preco{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    background-color: #fcc2f4;
+    color: #000000;
+
+}
