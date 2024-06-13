@@ -19,23 +19,26 @@ function adicionarProduto(&$estoque, $codigo, $nome, $tamanho, $cor, $quantidade
 }
 
 function venderProduto(&$estoque, $selecaoVenda) {
-    foreach($estoque as $produto){
-        if ($produto['codigo'] = $selecaoVenda){
-            $produto['quantidade'] --;
+    foreach($estoque as $indice => $produto) {
+        if ($produto['codigo'] == $selecaoVenda){
+            $estoque[$indice]['quantidade'] -= 1;
+            if ($estoque[$indice]['quantidade'] <= 0) {
+                unset($estoque[$indice]); //unset
+            }
         }
-
     }
-    if ($estoque['quantidade'] <= 0 ) {
-        $estoque[] = [ ]; //unset
-
-    } 
-    
-
 }
 
-function verificarEstoque(&$estoque, $codigo, $nome, $tamanho, $cor, $quantidade) {
-    foreach($estoque as $produto){
+function verificarEstoque(&$estoque, $verificarId) {
+    foreach($estoque as $indice => $produto){
+        if ($produto['codigo'] == $verificarId){
+            if ($estoque[$indice]['codigo'] >> 0){
+                echo "O produto : $produto[nome] está em estoque!\n";
+                echo "Estoque: $produto[quantidade]";
+            } else 
+            echo "Produto não encontrado";
 
+        }
 
     }
 
@@ -93,6 +96,9 @@ while (true) {
         case 3:
             echo "Verificar Estoque\n";
             // Implemente aqui o código para a opção 3
+            $verificarId = readline("Digite o Código do produto que deseja verificar: ");
+            verificarEstoque($estoque, $verificarId);
+
             break;
         case 4:
             echo "Listar o Estoque\n";
