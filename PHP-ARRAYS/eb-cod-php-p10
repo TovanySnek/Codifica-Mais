@@ -1,0 +1,65 @@
+<?php
+
+$valorCompra = 345;
+$percentualDesconto = 10;
+
+function aplicarDesconto($valorCompra, $percentualDesconto) {
+    $valorFinal = ($valorCompra * $percentualDesconto) / 100;
+    return $valorFinal;
+}
+
+function calcularDescontoProgressivo($valorCompra){
+    if ($valorCompra < 100) {
+        $percentualDesconto = 0;
+    } elseif ($valorCompra <= 500) {
+        $percentualDesconto = 10;
+    } else
+    $percentualDesconto = 20;
+    return $percentualDesconto;
+}
+echo "digite o valor da compra";
+$valorCompra = trim(fgets(STDIN));
+
+echo $valorCompra(calcularDescontoProgressivo($valorCompra));
+
+$funcionarios = [
+
+    "nome" => ["Pedro",
+    "salario_base" => 2500,
+    "horas_extras" => 10
+],
+
+    "nome" => ["Renata",
+    "salario_base" => 3000,
+    "horas_extras" => 5
+],
+
+    "nome" => ["Sergio",
+    "salario_base" => 2800,
+    "horas_extras" => 8
+],
+
+    "nome" => ["Vanessa",
+    "salario_base" => 3200,
+    "horas_extras" => 12
+],
+    
+    "nome" => ["Andre",
+    "salario_b  ase" => 1700,
+    "horas_extras" => 0
+],
+
+];
+
+
+function calcularSalarioTotal($salarioBase, $horasExtras) {
+    $valorHoraExtra = ($salarioBase / 160) * 1.5;
+    $salarioTotal = $salarioBase + ($horasExtras * $valorHoraExtra);
+    return $salarioTotal;
+}
+
+function listarFuncionarios($funcionarios) {
+    foreach ($funcionarios as $key => $funcionario) {
+        $funcionario[$key]['salario_total'] = "";
+    }
+}
