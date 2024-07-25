@@ -25,8 +25,9 @@ class Produto{
     
     public function exibirDetalhes()
     {
-        return $this->nome.PHP_EOL;
-        return $this->preco.PHP_EOL;
-        return $this->quantidadeEstoque.PHP_EOL;
+        echo $this->nome.PHP_EOL;
+        echo $this->preco.PHP_EOL;
+        echo $this->quantidadeEstoque.PHP_EOL;
+        
     }    
 }

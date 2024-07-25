@@ -25,8 +25,8 @@ class Funcionario{
     
     public function exibirDetalhes()
     {
-        return $this->nome.PHP_EOL;
-        return $this->salario.PHP_EOL;
-        return $this->cargo.PHP_EOL;
+        echo $this->nome.PHP_EOL;
+        echo $this->salario.PHP_EOL;
+        echo $this->cargo.PHP_EOL;
     }    
 }
