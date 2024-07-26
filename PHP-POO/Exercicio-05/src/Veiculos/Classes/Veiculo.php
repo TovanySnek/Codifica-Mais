@@ -1,8 +1,12 @@
 <?php
 
-namespace Veiculos\Classes;
+namespace Codifica\Veiculos\Classes;
 
-class Veiculo {
+require_once 'Autoloader.php';
+
+use Codifica\Veiculos\Interface\VeiculoInterface;
+
+class Veiculo implements VeiculoInterface{
 
     protected  $marca;
     protected  $modelo;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Veiculos\Interface;
+namespace Codifica\Veiculos\Interface;
 
 interface VeiculoInterface {
 
