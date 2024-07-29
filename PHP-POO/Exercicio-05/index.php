@@ -1,14 +1,8 @@
 <?php
 
-
 require_once 'Autoloader.php';
 
-use Codifica\Veiculos\Classes\Veiculo;
-use Codifica\Veiculos\Interface\VeiculoInterface;
-use Codifica\Veiculos\Classes\Carro;
-use Codifica\Veiculos\Classes\Moto;
-use Codifica\Veiculos\Classes\Caminhao;
-
+use Veiculos\Classes\Carro;
 
 $meuCarro = new Carro("Volkswagen", "Gol", 2001);
 

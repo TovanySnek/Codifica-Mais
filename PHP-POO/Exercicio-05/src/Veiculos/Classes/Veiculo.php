@@ -1,10 +1,10 @@
 <?php
 
-namespace Codifica\Veiculos\Classes;
+namespace Veiculos\Classes;
 
 require_once 'Autoloader.php';
 
-use Codifica\Veiculos\Interface\VeiculoInterface;
+use Veiculos\Interface\VeiculoInterface;
 
 class Veiculo implements VeiculoInterface{
 

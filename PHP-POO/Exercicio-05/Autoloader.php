@@ -1,7 +1,7 @@
 <?php
 
 spl_autoload_register(function (string $nomeCompletoDaClasse){
-    $caminhoArquivo = str_replace('Codifica\\Veiculos', 'src', $nomeCompletoDaClasse);
+    $caminhoArquivo = str_replace('Veiculos', 'src/Veiculos', $nomeCompletoDaClasse);
     $caminhoArquivo = str_replace('\\', DIRECTORY_SEPARATOR, $nomeCompletoDaClasse);
     $caminhoArquivo .= ".php";
 
