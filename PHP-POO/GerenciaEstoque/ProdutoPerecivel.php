@@ -2,12 +2,13 @@
 
 require_once "autoload.php";
 
-class ProdutoPerecivel extends Produto implements ProdutoInterface{
+class ProdutoPerecivel extends Produto {
    
     protected $validade;
 
-    public function __construct($validade)
+    public function __construct($nome, $sku, $unidadeMedida, $quantidade, $preco,$validade)
     {
+        parent::__construct($nome, $sku, $unidadeMedida, $quantidade, $preco);
         $this->validade = $validade;
     }
 

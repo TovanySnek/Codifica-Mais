@@ -1,15 +1,12 @@
 <?php
 
-require_once "autoload.php";
-
-
 class Produto implements ProdutoInterface{
 
-    protected $sku;
-    protected $nome;
-    protected $unidadeMedida;
-    protected $quantidade;
-    protected $preco;
+    public $sku;
+    public $nome;
+    public $unidadeMedida;
+    public $quantidade;
+    public $preco;
 
     public function __construct($nome, $sku, $unidadeMedida, $quantidade, $preco)
     {

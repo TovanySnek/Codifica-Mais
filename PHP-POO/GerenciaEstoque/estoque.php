@@ -1,38 +1,34 @@
 <?php
 
-
-
+require_once "autoload.php";
 class Estoque{
 
-    public function adicionarProduto($sku, $nome, $unidadeMedida , $quantidade, $preco)
+    public $estoqueObjeto = [];
+
+    public function adicionarProduto(Produto $produto)
     {
-        $estoque[] = [
-            'sku' => $sku,
-            'nome' =>  $nome,
-            'unidade_medida' =>  $unidadeMedida,
-            'quantidade' =>  $quantidade,
-            'preco' =>  $preco
-        ];
+        $this->estoqueObjeto[] = $produto;
         echo "Produto adcionado com sucesso!\n";
-        return $estoque; $sku; $nome; $unidadeMedida; $quantidade; $preco;
+      
+        return ;
     }
 
-    public function venderProduto($estoque, $selecaoVenda)
+    public function venderProduto($selecaoVenda)
     {
-        foreach($estoque as $indice => $produto) {
-            if ($produto['sku'] == $selecaoVenda){
-                $estoque[$indice]['quantidade'] -= 1;
+        foreach( $this->estoqueObjeto as $indice => $produto) {
+            if ($produto->sku == $selecaoVenda){
+                $this->estoqueObjeto[$indice]->quantidade -= 1;
             }
         }
     }
 
-    public function verificarEstoque($estoque, $verificarId)
+    public function verificarEstoque($verificarId)
     {
-        foreach($estoque as $indice => $produto){
-            if ($produto['sku'] == $verificarId){
-                if ($estoque[$indice]['sku'] >> 0){
-                    echo "O produto : $produto[nome] está em estoque!\n";
-                    echo "Estoque: $produto[quantidade]";
+        foreach($this->estoqueObjeto as $indice => $produto){
+            if ($produto->sku == $verificarId){
+                if ($this->estoqueObjeto[$indice]->sku >> 0){
+                    echo "O produto : $produto->nome está em estoque!\n";
+                    echo "Estoque: $produto->quantidade";
                 } else 
                 echo "Produto não encontrado";
             }
@@ -41,22 +37,27 @@ class Estoque{
 
     public function listarEstoque()
     {
-        if(empty($estoque)){
+        if(empty($this->estoqueObjeto)){
             echo "Estoque vazio!\n";
             
+        } 
+            foreach($this->estoqueObjeto as $produto){
+                echo "SKU: $produto->sku ", "Nome: $produto->nome ", "Unidade de Medida: $produto->unidadeMedida ", "Quantidade: $produto->quantidade ", "Preço: $produto->preco ", "Validade:". $produto->validade??'' ."\n";
+                //atributo dentro do objeto
         }
-        foreach($estoque as $produto){
-            echo "SKU: $produto[sku] ", "Nome: $produto[nome] ", "Unidade de Medida: $produto[unidade_medida] ", "Quantidade: $produto[quantidade] ", "Preço: $produto[preco] \n";
-        }
+            foreach($this->estoqueObjeto as $produto){
+                echo "SKU: $produto->sku ", "Nome: $produto->nome ", "Unidade de Medida: $produto->unidadeMedida ", "Quantidade: $produto->quantidade ", "Preço: $produto->preco \n";
+            }
+        
         
     }
     
     
-    public function deletaSku($estoque, $escolhaSku)
+    public function deletaSku($escolhaSku)
     {
-        foreach($estoque as $indice => $produto){
-            if ($produto['sku'] == $escolhaSku){
-                if ($estoque[$indice]['quantidade'] >> 0) {
+        foreach($this->estoqueObjeto as $indice => $produto){
+            if ($produto->sku == $escolhaSku){
+                if ($this->estoqueObjeto[$indice]->quantidade >> 0) {
                     echo "Estoque maior que 0, deseja continuar?\n";
                     echo "\n";
                     echo "1. SIM 1\n";
@@ -64,7 +65,7 @@ class Estoque{
                     $opcaoSku = readline("Digite a sua escolha: ");
                         switch ($opcaoSku) {
                             case 1:
-                                unset($estoque[$indice]); //unset
+                                unset($this->estoqueObjeto[$indice]); //unset
                                 break;
                             case 2:
                                 echo "Cancelado";
@@ -80,10 +81,10 @@ class Estoque{
         return;
     }
 
-    public function indicadorProduto($estoque)
+    public function indicadorProduto()
     {
         echo 'Numero de Produtos distintos: ';
-        echo count(array_keys($estoque)) .PHP_EOL;
+        echo count(array_keys($this->estoqueObjeto)) .PHP_EOL;
 
     }
 

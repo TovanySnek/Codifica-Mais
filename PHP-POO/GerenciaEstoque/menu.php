@@ -17,7 +17,8 @@ function exibirMenu()
     $opcao = readline("Digite a sua escolha: ");
     return $opcao;
 }
-$novoEstoque = new Estoque();
+
+$estoque = new Estoque();
 
 while (true) {
 
@@ -28,16 +29,23 @@ while (true) {
             echo "Adicionar um produto\n";
             $sku = readline("Digite o Código SKU do produto: ");
             $nome = readline("Digite o Nome do produto: ");
-            $unidade = readline("Digite o peso e a unidade: ");
+            $unidadeMedida = readline("Digite o peso e a unidade: ");
             $quantidade = readline("Digite a Quantidade: ");
             $preco = readline("Digite o Preço: ");
-            $novoEstoque->adicionarProduto($sku, $nome, $unidade , $quantidade, $preco);
-            break;
+            $checarPerecivel = readline("O produto é perecivel? (SIM/NAO) ");
+                if ($checarPerecivel == "SIM"){
+                    $validade = readline("Digite a validade: ");
+                    $novoProduto = new ProdutoPerecivel($nome, $sku, $unidadeMedida, $quantidade, $preco, $validade);
+                } else
+                $novoProduto = new Produto($nome, $sku, $unidadeMedida, $quantidade, $preco);
+        
+                $estoque->adicionarProduto($novoProduto);
+                break;
         case 2:
             echo "Vender um produto\n";
             // Implemente aqui o código para a opção 2
             $selecaoVenda = readline("Digite o Código do produto a vender: ");
-            $novoEstoque->venderProduto($estoque, $selecaoVenda);
+            $estoque->venderProduto( $selecaoVenda);
 
             break;
         case 3:
@@ -45,26 +53,26 @@ while (true) {
             // Implemente aqui o código para a opção 3
 
             $verificarId = readline("Digite o Código do produto que deseja verificar: ");
-            $novoEstoque->verificarEstoque($estoque, $verificarId);
+            $estoque->verificarEstoque($verificarId);
 
             break;
         case 4:
             echo "Listar o Estoque\n";
             // Implemente aqui o código para a opção 4
 
-            $novoEstoque->listarEstoque();
+            $estoque->listarEstoque();
 
             break;
         case 5:
             
             echo "Deletar por SKU\n";
             $escolhaSku = readline("Digite o Código SKU do produto a deletar: ");
-            $novoEstoque->deletaSku($estoque, $escolhaSku);
+            $estoque->deletaSku($escolhaSku);
             break;
         case 6:
         
             echo "Quantidade de Produtos\n";
-            $novoEstoque->indicadorProduto($estoque);
+            $estoque->indicadorProduto();
             break;
         
         case 7:
