@@ -22,27 +22,27 @@ session_start();
     <main>
 
         <section class="xtlye_formulario">
-            <div>
-                <label>Nome do Item:</label>
+            <div class="xtyle__input">
+                <label >Nome do Item:</label>
+                <input  type="text"/>
+            </div>
+            <div class="xtyle__input">
+                <label >SKU:</label>
                 <input type="text"/>
             </div>
-            <div>
-                <label>SKU:</label>
+            <div class="xtyle__input">
+                <label >Unidade de Medida:</label>
                 <input type="text"/>
             </div>
-            <div>
-                <label>Unidade de Medida:</label>
-                <input type="text"/>
-            </div>
-            <div>
+            <div class="xtyle__input">
                 <label>Valor:</label>
                 <input type="text"/>
             </div>
-            <div>
+            <div class="xtyle__input">
                 <label>Quantidade:</label>
                 <input type="text"/>
             </div>
-            <div>
+            <div class="xtyle__input">
                 <label>Categoria:</label>
                 <select name="Categoria">
                     <option>Vestuário</option>

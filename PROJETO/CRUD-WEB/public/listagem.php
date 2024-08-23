@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de produtos</title>
-    <link rel="stylesheet" href="/css/styleFormulario.css">
+    <link rel="stylesheet" href="/css/styleListagem.css">
 </head>
 <body>
        
@@ -28,26 +28,50 @@ session_start();
         <section class="xtlye_main_guia">
 
             <section class="xtyle_main_caixaconteudo">
-                <div class="xytle_caixa_id">
+                <div class="xytle_caixa_linha_1">
                     <h1>#000001</h1>
-                </div>
-                <div class="xytle_caixa_categoria">
                     <h1>Vestuário</h1>
-                </div>
-                <div class="xytle_caixa_sku">
+                <div class="xtyle_caixa_linha_1_1">
                     <h1>123456</h1>
                 </div>
-                <div class="xytle_caixa_nome">
-                    <h1>Camisa Codifica+</h1>    
                 </div>
-                <div class="xytle_caixa_quantidade">
+                <div class="xytle_caixa_linha_2">
+                    <h1>Camisa Codifica+</h1>    
+                <div class="xytle_caixa_linha_2_1">
                     <h1>Quantidade: 100</h1>
                 </div>
-                <div class="xytle_caixa_editar">
-                    <button>Editar</button>
                 </div>
-                <div class="xytle_caixa_deletar">
-                    <button>Deletar</button>
+                <div class="xtyle__botoes__guia">
+                    <div class="xytle_caixa_editar">
+                        <button class="xtlye__botao__editar">Editar</button>
+                    </div>
+                    <div class="xytle_caixa_deletar">
+                        <button class="xtlye__botao__deletar">Deletar</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="xtyle_main_caixaconteudo">
+                <div class="xytle_caixa_linha_1">
+                    <h1>#000001</h1>
+                    <h1>Vestuário</h1>
+                <div class="xtyle_caixa_linha_1_1">
+                    <h1>123456</h1>
+                </div>
+                </div>
+                <div class="xytle_caixa_linha_2">
+                    <h1>Camisa Codifica+</h1>    
+                <div class="xytle_caixa_linha_2_1">
+                    <h1>Quantidade: 100</h1>
+                </div>
+                </div>
+                <div class="xtyle__botoes__guia">
+                    <div class="xytle_caixa_editar">
+                        <button class="xtlye__botao__editar">Editar</button>
+                    </div>
+                    <div class="xytle_caixa_deletar">
+                        <button class="xtlye__botao__deletar">Deletar</button>
+                    </div>
                 </div>
             </section>
 
