@@ -1,0 +1,16 @@
+{
+    "name": "eb/crud-web",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Eb\\CrudWeb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "EB",
+            "email": "elliesnakie@gmail.com"
+        }
+    ],
+    "require": {}
+}
