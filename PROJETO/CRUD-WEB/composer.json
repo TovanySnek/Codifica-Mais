@@ -3,7 +3,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Eb\\CrudWeb\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

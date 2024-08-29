@@ -1,5 +1,7 @@
 <?php
 session_start();
+ //                    $produto->getId()
+
     $produtos = [[
             'id' => "#000001",
             'categoria' => "Vestuário",
@@ -8,11 +10,18 @@ session_start();
             'quantidade' => "Quantidade: 100" 
 
         ],[
-            'id' => "#000001",
-            'categoria' => "Vestuário",
-            'sku' => "123456",   
-            'nome' => "Camisa Codifica+",
-            'quantidade' => "Quantidade: 100"
+            'id' => '#000002',
+            'categoria' => 'Eletrodomésticos',
+            'sku' => '123457',
+            'nome' => 'Geladeira',
+            'quantidade' => 'Quantidade: 5'
+
+        ],[
+            'id' => '#000003',
+            'categoria' => 'Eletrônicos',
+            'sku' => '124487',
+            'nome' => 'Smartphone',
+            'quantidade' => 'Quantidade: 15'
         ]
     ];
 
@@ -30,7 +39,7 @@ session_start();
        
     <header>
         <section class="xtlye__header__guia">
-            <a class="xtlye__header__link" href="">Novo Item</a>
+            <a class="xtlye__header__link" href="formulario.php">Novo Item</a>
             <section class="xtyle__header__busca">
                 <input type="text" class="xtlye__busca__imput" placeholder="Buscar..."/>
                 <button class="xtlye__busca__botao">Buscar</button>
@@ -44,8 +53,7 @@ session_start();
             <?php foreach ($produtos as $item): ?>
             <section class="xtyle_main_caixaconteudo">
                 <div class="xytle_caixa_linha_1">
-                    <h1><?php echo $item['id'] ?></h1>
-                    \\ $produto->getId() 
+                    <h1><?php echo $item['id'] ?></h1> 
                     <h1><?php echo $item['categoria'] ?></h1>
                 <div class="xtyle_caixa_linha_1_1">
                     <h1><?php echo $item['sku'] ?></h1>
@@ -67,30 +75,6 @@ session_start();
                 </div>
             </section>
             <?php endforeach; ?>
-
-            <section class="xtyle_main_caixaconteudo">
-                <div class="xytle_caixa_linha_1">
-                    <h1>#000001</h1>
-                    <h1>Vestuário</h1>
-                <div class="xtyle_caixa_linha_1_1">
-                    <h1>123456</h1>
-                </div>
-                </div>
-                <div class="xytle_caixa_linha_2">
-                    <h1>Camisa Codifica+</h1>    
-                <div class="xytle_caixa_linha_2_1">
-                    <h1>Quantidade: 100</h1>
-                </div>
-                </div>
-                <div class="xtyle__botoes__guia">
-                    <div class="xytle_caixa_editar">
-                        <button class="xtlye__botao__editar">Editar</button>
-                    </div>
-                    <div class="xytle_caixa_deletar">
-                        <button class="xtlye__botao__deletar">Deletar</button>
-                    </div>
-                </div>
-            </section>
 
         </section>
     </main>
