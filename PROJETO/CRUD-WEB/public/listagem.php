@@ -1,5 +1,20 @@
 <?php
 session_start();
+    $produtos = [[
+            'id' => "#000001",
+            'categoria' => "Vestuário",
+            'sku' => "123456",   
+            'nome' => "Camisa Codifica+",
+            'quantidade' => "Quantidade: 100" 
+
+        ],[
+            'id' => "#000001",
+            'categoria' => "Vestuário",
+            'sku' => "123456",   
+            'nome' => "Camisa Codifica+",
+            'quantidade' => "Quantidade: 100"
+        ]
+    ];
 
 ?>
 
@@ -26,19 +41,20 @@ session_start();
 
     <main>
         <section class="xtlye_main_guia">
-
+            <?php foreach ($produtos as $item): ?>
             <section class="xtyle_main_caixaconteudo">
                 <div class="xytle_caixa_linha_1">
-                    <h1>#000001</h1>
-                    <h1>Vestuário</h1>
+                    <h1><?php echo $item['id'] ?></h1>
+                    \\ $produto->getId() 
+                    <h1><?php echo $item['categoria'] ?></h1>
                 <div class="xtyle_caixa_linha_1_1">
-                    <h1>123456</h1>
+                    <h1><?php echo $item['sku'] ?></h1>
                 </div>
                 </div>
                 <div class="xytle_caixa_linha_2">
-                    <h1>Camisa Codifica+</h1>    
+                    <h1><?php echo $item['nome'] ?></h1>    
                 <div class="xytle_caixa_linha_2_1">
-                    <h1>Quantidade: 100</h1>
+                    <h1><?php echo $item['quantidade'] ?></h1>
                 </div>
                 </div>
                 <div class="xtyle__botoes__guia">
@@ -50,6 +66,7 @@ session_start();
                     </div>
                 </div>
             </section>
+            <?php endforeach; ?>
 
             <section class="xtyle_main_caixaconteudo">
                 <div class="xytle_caixa_linha_1">
