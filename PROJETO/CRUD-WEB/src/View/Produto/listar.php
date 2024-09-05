@@ -1,31 +1,6 @@
 <?php
 
 
- //                    $produto->getId()
-
-    $produtos = [[
-            'id' => "#000001",
-            'categoria' => "Vestuário",
-            'sku' => "123456",   
-            'nome' => "Camisa Codifica+",
-            'quantidade' => "Quantidade: 100" 
-
-        ],[
-            'id' => '#000002',
-            'categoria' => 'Eletrodomésticos',
-            'sku' => '123457',
-            'nome' => 'Geladeira',
-            'quantidade' => 'Quantidade: 5'
-
-        ],[
-            'id' => '#000003',
-            'categoria' => 'Eletrônicos',
-            'sku' => '124487',
-            'nome' => 'Smartphone',
-            'quantidade' => 'Quantidade: 15'
-        ]
-    ];
-
 ?>
 
 <!DOCTYPE html>
@@ -51,27 +26,27 @@
 
     <main>
         <section class="xtlye_main_guia">
-            <?php foreach ($produtos as $item): ?>
+            <?php foreach ($produtos as $id => $produto): ?>
             <section class="xtyle_main_caixaconteudo">
                 <div class="xytle_caixa_linha_1">
-                    <h1><?php echo $item['id'] ?></h1> 
-                    <h1><?php echo $item['categoria'] ?></h1>
+                    <h1><?= $id ?></h1> 
+                    <h1><?php echo $produto['nome'] ?></h1>
                 <div class="xtyle_caixa_linha_1_1">
-                    <h1><?php echo $item['sku'] ?></h1>
+                    <h1><?php echo $produto['sku'] ?></h1>
                 </div>
                 </div>
                 <div class="xytle_caixa_linha_2">
-                    <h1><?php echo $item['nome'] ?></h1>    
+                    <h1><?php echo $produto['nome'] ?></h1>    
                 <div class="xytle_caixa_linha_2_1">
-                    <h1><?php echo $item['quantidade'] ?></h1>
+                    <h1><?php echo $produto['quantidade'] ?></h1>
                 </div>
                 </div>
                 <div class="xtyle__botoes__guia">
                     <div class="xytle_caixa_editar">
-                        <a class="xtlye__botao__editar" href="/produtos/editar">Editar</a>
+                        <a class="xtlye__botao__editar" href="/produtos/editar?id=<?= $id ?>">Editar</a>
                     </div>
                     <div class="xytle_caixa_deletar">
-                        <button class="xtlye__botao__deletar">Deletar</button>
+                        <button class="xtlye__botao__deletar" onclick="return confirm('Deseja deletar o registro?')" href="/produtos/deletar?id=<?= $id ?>" >Deletar</button>
                     </div>
                 </div>
             </section>

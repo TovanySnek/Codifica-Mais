@@ -1,10 +1,53 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../src/Helper.php';
 
 use App\Controller\ProdutosController;
 
 $produto = new ProdutosController();
+
+session_start();
+
+if (empty($_SESSION)) {
+    $_SESSION['produtos'] = [[
+        'id' => "#000001",
+        'categoria' => "Vestuário",
+        'sku' => "123456",   
+        'nome' => "Camisa Codifica+",
+        'quantidade' => "Quantidade: 100" 
+
+    ],[
+        'id' => '#000002',
+        'categoria' => 'Eletrodomésticos',
+        'sku' => '123457',
+        'nome' => 'Geladeira',
+        'quantidade' => 'Quantidade: 5'
+
+    ],[
+        'id' => '#000003',
+        'categoria' => 'Eletrônicos',
+        'sku' => '124487',
+        'nome' => 'Smartphone',
+        'quantidade' => 'Quantidade: 15'
+    ]
+    //  id' => 1,
+    // 'nome' => 'Smartphone',
+    // 'sku' => '123456',
+    // 'unidade_medida_id' => '1',
+    // 'valor' => 1500.00,
+    // 'quantidade' => 10,
+    // 'categoria_id' => '1',
+    //  
+    // 'id' => 2,
+    // 'nome' => 'Geladeira',
+    // 'sku' => '123457',
+    // 'unidade_medida_id' => '2',
+    // 'valor' => 2500.00,
+    // 'quantidade' => 5,
+    // 'categoria_id' => '2',
+];}
+
 
 $caminho = rtrim($_SERVER['PATH_INFO'], '/');
 
@@ -43,45 +86,7 @@ header('Location: /produtos');
  //       '8' => 'm²',
   //  ];
 
-    $_SESSION['produtos'] = [[
-        'id' => "#000001",
-        'categoria' => "Vestuário",
-        'sku' => "123456",   
-        'nome' => "Camisa Codifica+",
-        'quantidade' => "Quantidade: 100" 
 
-    ],[
-        'id' => '#000002',
-        'categoria' => 'Eletrodomésticos',
-        'sku' => '123457',
-        'nome' => 'Geladeira',
-        'quantidade' => 'Quantidade: 5'
-
-    ],[
-        'id' => '#000003',
-        'categoria' => 'Eletrônicos',
-        'sku' => '124487',
-        'nome' => 'Smartphone',
-        'quantidade' => 'Quantidade: 15'
-    ]
-];
-          //  'id' => 1,
-         //   'nome' => 'Smartphone',
-         //   'sku' => '123456',
-           // 'unidade_medida_id' => '1',
-          //  'valor' => 1500.00,
-         //   'quantidade' => 10,
-          //  'categoria_id' => '1',
-      //  ],[
-       //     'id' => 2,
-       //     'nome' => 'Geladeira',
-       //     'sku' => '123457',
-          //  'unidade_medida_id' => '2',
-          //  'valor' => 2500.00,
-       //     'quantidade' => 5,
-           // 'categoria_id' => '2',
-      //  ],
-    //];
 
     // Redireciona para a página de listagem
     //header('Location: listagem.php');
