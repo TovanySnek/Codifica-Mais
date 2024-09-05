@@ -1,6 +1,25 @@
 <?php
-    // Inicia a sessão
-    session_start();
+
+require __DIR__ . '/../vendor/autoload.php';
+
+use App\Controller\ProdutosController;
+
+$produto = new ProdutosController();
+
+$caminho = rtrim($_SERVER['PATH_INFO'], '/');
+
+if ($caminho == '/produtos/criar') {    
+    return $produto->criar();
+}
+if ($caminho == '/produtos/editar') {
+    return $produto->editar();
+}
+if ($caminho == '/produtos') {
+    return $produto->listar();
+}
+
+echo "Página não encontrada :(";
+header('Location: /produtos');
 
 
     // Define o array de categorias, unidades de medida e produtos
@@ -65,6 +84,6 @@
     //];
 
     // Redireciona para a página de listagem
-    header('Location: listagem.php');
+    //header('Location: listagem.php');
 
 ?>

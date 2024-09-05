@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+
  //                    $produto->getId()
 
     $produtos = [[
@@ -39,7 +40,7 @@ session_start();
        
     <header>
         <section class="xtlye__header__guia">
-            <a class="xtlye__header__link" href="formulario.php">Novo Item</a>
+            <a class="xtlye__header__link" href="/produtos/criar">Novo Item</a>
             <section class="xtyle__header__busca">
                 <input type="text" class="xtlye__busca__imput" placeholder="Buscar..."/>
                 <button class="xtlye__busca__botao">Buscar</button>
@@ -67,7 +68,7 @@ session_start();
                 </div>
                 <div class="xtyle__botoes__guia">
                     <div class="xytle_caixa_editar">
-                        <button class="xtlye__botao__editar">Editar</button>
+                        <a class="xtlye__botao__editar" href="/produtos/editar">Editar</a>
                     </div>
                     <div class="xytle_caixa_deletar">
                         <button class="xtlye__botao__deletar">Deletar</button>

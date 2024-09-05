@@ -1,5 +1,5 @@
 {
-    "name": "eb/crud-web",
+    "name": "eb/produtos",
     "type": "project",
     "autoload": {
         "psr-4": {
