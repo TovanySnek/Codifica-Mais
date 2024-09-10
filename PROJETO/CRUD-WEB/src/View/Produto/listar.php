@@ -29,8 +29,7 @@
             <?php foreach ($produtos as $id => $produto): ?>
             <section class="xtyle_main_caixaconteudo">
                 <div class="xytle_caixa_linha_1">
-                    <h1><?= $id ?></h1> 
-                    <h1><?php echo $produto['nome'] ?></h1>
+                    <h1># <?= $id ?></h1> 
                 <div class="xtyle_caixa_linha_1_1">
                     <h1><?php echo $produto['sku'] ?></h1>
                 </div>
@@ -38,7 +37,7 @@
                 <div class="xytle_caixa_linha_2">
                     <h1><?php echo $produto['nome'] ?></h1>    
                 <div class="xytle_caixa_linha_2_1">
-                    <h1><?php echo $produto['quantidade'] ?></h1>
+                    <h1>Quantidade: <?php echo $produto['quantidade'] ?></h1>
                 </div>
                 </div>
                 <div class="xtyle__botoes__guia">
@@ -46,7 +45,7 @@
                         <a class="xtlye__botao__editar" href="/produtos/editar?id=<?= $id ?>">Editar</a>
                     </div>
                     <div class="xytle_caixa_deletar">
-                        <button class="xtlye__botao__deletar" onclick="return confirm('Deseja deletar o registro?')" href="/produtos/deletar?id=<?= $id ?>" >Deletar</button>
+                        <a class="xtlye__botao__deletar" onclick="return confirm('Deseja deletar o registro?')" href="/produtos/deletar?id=<?= $id ?>" >Deletar</a>
                     </div>
                 </div>
             </section>

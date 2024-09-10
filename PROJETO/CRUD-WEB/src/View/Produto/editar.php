@@ -15,37 +15,43 @@
 
     <header>
         <section class="xtlye__Titulo">
-            <h1>Editar Item</h1>
+            <h1>Editar - #<?= $id ?></h1>
         </section>
     </header>
 
     <main>
 
         <section class="xtlye_formulario">
-            <form>
+            <form method="POST" action="/produtos/salvar?id=<?= $produto['id'] ?>">
                 <div class="xtyle__input">
                     <label >Nome do Item:</label>
-                    <input  type="text"/>
+                    <legend><?= $produto['nome'] ?></legend>
+                    <input  type="text" name="nome" value="<?= $produto['nome'] ?>"/>
                 </div>
                 <div class="xtyle__input">
                     <label >SKU:</label>
-                    <input type="text"/>
+                    <legend><?= $produto['sku'] ?></legend>
+                    <input name="sku" value="<?= $produto['sku'] ?>"/>
                 </div>
                 <div class="xtyle__input">
                     <label >Unidade de Medida:</label>
-                    <input type="text"/>
+                    <legend><?= $produto['unidade medida'] ?></legend>
+                    <input type="text" name="unidade medida" value="<?= $produto['unidade medida'] ?>"/>
                 </div>
                 <div class="xtyle__input">
                     <label>Valor:</label>
-                    <input type="text"/>
+                    <legend><?= $produto['valor'] ?></legend>
+                    <input type="text" name="valor" value="<?= $produto['valor'] ?>"/>
                 </div>
                 <div class="xtyle__input">
                     <label>Quantidade:</label>
-                    <input type="text"/>
+                    <legend><?= $produto['quantidade'] ?></legend>
+                    <input name="quantidade" value="<?= $produto['quantidade'] ?>"/>
                 </div>
                 <div class="xtyle__input">
                     <label>Categoria:</label>
-                    <select name="Categoria">
+                    <legend><?= $produto['categoria'] ?></legend>
+                    <select name="categoria" value="<?= $produto['categoria'] ?>">
                         <option>Vestuário</option>
                         <option>Eletrônicos</option>
                         <option>Escritório</option>

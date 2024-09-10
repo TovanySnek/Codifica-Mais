@@ -22,30 +22,30 @@
     <main>
 
         <section class="xtlye_formulario">
-            <form>
+            <form method="POST" action="/produtos/salvar">
                 <div class="xtyle__input">
                     <label >Nome do Item:</label>
-                    <input  type="text"/>
+                    <input  type="text" name="nome" required/>
                 </div>
                 <div class="xtyle__input">
                     <label >SKU:</label>
-                    <input type="text"/>
+                    <input name="sku" required/>
                 </div>
                 <div class="xtyle__input">
                     <label >Unidade de Medida:</label>
-                    <input type="text"/>
+                    <input type="text" name="unidade medida" required/>
                 </div>
                 <div class="xtyle__input">
                     <label>Valor:</label>
-                    <input type="text"/>
+                    <input type="text" name="valor" required/>
                 </div>
                 <div class="xtyle__input">
                     <label>Quantidade:</label>
-                    <input type="text"/>
+                    <input name="quantidade" required/>
                 </div>
                 <div class="xtyle__input">
                     <label>Categoria:</label>
-                    <select name="Categoria">
+                    <select name="categoria" value="<?= $produto['categoria'] ?>" required>
                         <option>Vestuário</option>
                         <option>Eletrônicos</option>
                         <option>Escritório</option>

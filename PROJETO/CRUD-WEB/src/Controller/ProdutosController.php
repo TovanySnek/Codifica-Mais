@@ -6,6 +6,7 @@ class ProdutosController{
     public function listar()
     {
 
+        $produtos = $_SESSION['produtos'];
         require __DIR__ . "/../View/Produto/listar.php";
         
     }
@@ -19,12 +20,31 @@ class ProdutosController{
     public function salvar()
     {
 
-        echo "teste";
+        $id = $_GET['id'] ?? 0;
+        $dados = $_POST;
+
+        if (empty($id)) {
+            $maiorId = 0;
+            
+            foreach($_SESSION['produtos'] as $produto) {
+                if ($maiorId < $produto['id']) {
+                    $maiorId = $produto['id'];
+                }
+            }
+            $id = $maiorId + 1;
+        }
+
+        $dados['id'] = $id;
+        $_SESSION['produtos'][$id] = $dados;
+        header("Location: /produtos");
 
     }
     public function editar()
     {
 
+        $id = $_GET['id'];
+        $produtos = $_SESSION['produtos'];
+        $produto = $produtos[$id];
         require __DIR__ . "/../View/Produto/editar.php";
 
     }
@@ -37,7 +57,9 @@ class ProdutosController{
     public function deletar()
     {
        
-        echo "teste";
+        $id = $_GET['id'];
+        unset($_SESSION['produtos'][$id]);
+        header("Location: /produtos");
 
     }
 }

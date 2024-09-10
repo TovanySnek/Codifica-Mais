@@ -3,34 +3,35 @@
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/Helper.php';
 
+session_start();
+
 use App\Controller\ProdutosController;
 
 $produto = new ProdutosController();
 
-session_start();
-
 if (empty($_SESSION)) {
-    $_SESSION['produtos'] = [[
-        'id' => "#000001",
+    $_SESSION['produtos'] = [
+        1 => [
+        'id' => 1,
         'categoria' => "Vestuário",
-        'sku' => "123456",   
+        'sku' => 123456,   
         'nome' => "Camisa Codifica+",
-        'quantidade' => "Quantidade: 100" 
+        'quantidade' => 100 
 
-    ],[
-        'id' => '#000002',
-        'categoria' => 'Eletrodomésticos',
-        'sku' => '123457',
-        'nome' => 'Geladeira',
-        'quantidade' => 'Quantidade: 5'
+    ], // 2 => [
+ //       'id' => 2,
+  //      'categoria' => 'Eletrodomésticos',
+ //       'sku' => 123457,
+  //      'nome' => 'Geladeira',
+  //      'quantidade' => 5
 
-    ],[
-        'id' => '#000003',
-        'categoria' => 'Eletrônicos',
-        'sku' => '124487',
-        'nome' => 'Smartphone',
-        'quantidade' => 'Quantidade: 15'
-    ]
+   // ],  3 => [
+  //      'id' => 3,
+  //      'categoria' => 'Eletrônicos',
+   //     'sku' => 124487,
+   //     'nome' => 'Smartphone',
+  //      'quantidade' => 15
+  //  ]
     //  id' => 1,
     // 'nome' => 'Smartphone',
     // 'sku' => '123456',
@@ -59,6 +60,12 @@ if ($caminho == '/produtos/editar') {
 }
 if ($caminho == '/produtos') {
     return $produto->listar();
+}
+if ($caminho == '/produtos/salvar') {
+    return $produto->salvar();
+}
+if ($caminho == '/produtos/deletar') {
+    return $produto->deletar();
 }
 
 echo "Página não encontrada :(";
