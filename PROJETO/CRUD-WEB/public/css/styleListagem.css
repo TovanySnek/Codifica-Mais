@@ -1,0 +1,162 @@
+@import url();
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    height: 100vh;
+    width: 80%;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #fcc2f4;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fcc2f4;
+    height: 100%;
+    margin: auto;
+    
+
+}
+
+
+.xtlye__header__guia{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    
+}
+
+.xtlye__header__link{
+    background-color:cyan;
+    border:solid 2px pink;
+    border-radius:10px;
+    padding: 7px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 25px;
+    height:30px;
+    
+}
+
+.xtyle__header__busca{
+    background-color:cyan;
+    border:solid 2px pink;
+    color: #000000;
+    border-radius:10px;
+
+  }
+  
+.xtlye__busca__imput{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-size:25px;
+    border:none;
+    width:250px;
+    height:40px;
+    color: #000000;
+  }
+  
+.xtlye__busca__botao{
+    border:none;
+    float:left;
+    height:45px;
+    border-radius:0 7px 7px 0;
+    width:70px;
+    font-weight:bold;
+    background:#000000;
+    color: white;
+  }
+
+.xtlye_main_guia{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-top: 5%;
+}
+
+.xtyle_main_caixaconteudo{
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #fcc2f4;
+    padding: 2%;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+.xytle_caixa_linha_1{
+    align-items:center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: auto;
+
+}
+.xtyle_caixa_linha_1_1{
+    margin-left: auto; 
+    margin-right: 0;
+
+}
+.xytle_caixa_linha_2{
+    align-items:center;
+    flex-direction: row;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 2%;
+} 
+.xytle_caixa_linha_2_1{
+    margin-left: auto; 
+    margin-right: 0;
+
+}
+
+.xtyle__botoes__guia{
+    align-items:center;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.xytle_caixa_editar{
+    padding-top: 5%;
+
+
+}
+.xytle_caixa_deletar{
+    padding-top: 5%;
+
+
+}
+
+
+.xtlye__botao__editar{
+    background-color: aqua;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 7px;
+    border: 2px solid aqua;
+    padding: 5px 10px;
+
+}
+
+.xtlye__botao__deletar{
+    background-color: red;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 7px;
+    border: 2px solid red;
+    padding: 5px 10px;
+
+}
+
