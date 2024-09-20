@@ -36,7 +36,16 @@
                 <div class="xtyle__input">
                     <label >Unidade de Medida:</label>
                     <legend><?= $produto['unidade medida'] ?></legend>
-                    <input type="text" name="unidade medida" value="<?= $produto['unidade medida'] ?>"/>
+                    <select name="unidade medida" value="<?= $produto['unidade medida'] ?>" required>
+                        <option>Un</option>
+                        <option>Kg</option>
+                        <option>g</option>
+                        <option>L</option>
+                        <option>mm</option>
+                        <option>cm</option>
+                        <option>m</option>
+                        <option>m²</option>
+                    </select>
                 </div>
                 <div class="xtyle__input">
                     <label>Valor:</label>
@@ -52,9 +61,12 @@
                     <label>Categoria:</label>
                     <legend><?= $produto['categoria'] ?></legend>
                     <select name="categoria" value="<?= $produto['categoria'] ?>">
-                        <option>Vestuário</option>
                         <option>Eletrônicos</option>
-                        <option>Escritório</option>
+                        <option>Eletrodomésticos</option>
+                        <option>Móveis</option>
+                        <option>Decoração</option>
+                        <option>Vestuário</option>
+                        <option>Outros</option>
                     </select>
                 </div>
                 <div class="button">
