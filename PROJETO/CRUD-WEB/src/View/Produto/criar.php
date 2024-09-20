@@ -17,6 +17,11 @@ $sql = 'INSERT INTO produto (id, nome, sku, unidade_medida_id, valor, quantidade
 $statement = $pdo->prepare($sql);
 $statement->bindValue(1, $_POST['id']);
 $statement->bindValue(2, $_POST['nome']);
+$statement->bindValue(3, $_POST['sku']);
+$statement->bindValue(4, $_POST['unidade_medida_id']);
+$statement->bindValue(5, $_POST['valor']);
+$statement->bindValue(6, $_POST['quantidade']);
+$statement->bindValue(7, $_POST['categoria_id']);
 
 var_dump($statement->execute());
 
