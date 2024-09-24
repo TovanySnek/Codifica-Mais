@@ -1,6 +1,32 @@
 <?php
 
 
+require_once __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../src/conectar_banco.php';
+
+$sql1 = "SELECT * FROM produto";
+$statement = $pdo -> query($sql1);
+$produto = $statement -> fetchAll(PDO::FETCH_ASSOC);
+var_dump($produto);
+
+
+//$statement = $pdo->query(statement: 'SELECT * FROM produto;');
+//$produtoDataList = $statement->fetchAll(fetch_style: PDO::FETCH_ASSOC);
+//$produtoList = [];
+//foreach ($produtoDataList as $produtoData) {
+//    $produtoList[] = new ProdutosController(
+//        $produtoData['id'],
+//        $produtoData['nome'],
+//        $produtoData['sku'],
+//        $produtoData['unidade_medida_id'],
+//        $produtoData['valor'],
+//        $produtoData['quantidade'],
+//        $produtoData['categoria_id'],
+//    );
+//}
+
+//var_dump($studentList);
+
 ?>
 
 <!DOCTYPE html>

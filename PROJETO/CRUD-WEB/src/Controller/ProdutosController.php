@@ -38,6 +38,18 @@ class ProdutosController{
         $_SESSION['produtos'][$id] = $dados;
         header("Location: /produtos");
 
+        $insertQuery = 'INSERT INTO produto (name birth_date) VALUES (:name, :birth_date);';
+        $stmt = $this->connection->prepare($insertQuery);
+
+        $success = $stmt->execute([
+            ':name' => $produto->name(),
+            ':birth_date' => $produto->birthDate()->format(format:'Y-m-d'),
+        ]);
+
+        $produto->defineId($this->connection->lasInsertId());
+
+        return $success;
+
     }
     public function editar()
     {

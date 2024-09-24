@@ -1,29 +1,18 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "1234";
+require __DIR__ . '/../src/conectar_banco.php';
 
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=controle_produtos", $username, $password);
-  
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
-}
+//$sql = 'INSERT INTO produto (id, nome, sku, unidade_medida_id, valor, quantidade, categoria_id) VALUES ';
+//$statement = $pdo->prepare($sqlInsert);
+//$statement->bindValue(1, $_POST['id']);
+//$statement->bindValue(2, $_POST['nome']);
+//$statement->bindValue(3, $_POST['sku']);
+//$statement->bindValue(4, $_POST['unidade_medida_id']);
+//$statement->bindValue(5, $_POST['valor']);
+//$statement->bindValue(6, $_POST['quantidade']);
+//$statement->bindValue(7, $_POST['categoria_id']);
 
-$sql = 'INSERT INTO produto (id, nome, sku, unidade_medida_id, valor, quantidade, categoria_id) VALUES ';
-$statement = $pdo->prepare($sql);
-$statement->bindValue(1, $_POST['id']);
-$statement->bindValue(2, $_POST['nome']);
-$statement->bindValue(3, $_POST['sku']);
-$statement->bindValue(4, $_POST['unidade_medida_id']);
-$statement->bindValue(5, $_POST['valor']);
-$statement->bindValue(6, $_POST['quantidade']);
-$statement->bindValue(7, $_POST['categoria_id']);
-
-var_dump($statement->execute());
+//var_dump($statement->execute());
 
 ?>
 

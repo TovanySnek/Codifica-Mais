@@ -2,23 +2,25 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/Helper.php';
+require __DIR__ . '/../src/conectar_banco.php';
 
 session_start();
 
 use App\Controller\ProdutosController;
 
+
 $produto = new ProdutosController();
 
-if (empty($_SESSION)) {
-    $_SESSION['produtos'] = [
-        1 => [
-        'id' => 1,
-        'categoria' => "Vestuário",
-        'sku' => 123456,   
-        'nome' => "Camisa Codifica+",
-        'quantidade' => 100 
-
-    ], // 2 => [
+//if (empty($_SESSION)) {
+ //   $_SESSION['produtos'] = [
+//        1 => [
+//        'id' => 1,
+ //       'categoria' => "Vestuário",
+ //       'sku' => 123456,   
+ //       'nome' => "Camisa Codifica+",
+ //       'quantidade' => 100 
+//
+ //  ], // 2 => [
     //       'id' => 2,
     //      'categoria' => 'Eletrodomésticos',
     //       'sku' => 123457,
@@ -47,7 +49,7 @@ if (empty($_SESSION)) {
     // 'valor' => 2500.00,
     // 'quantidade' => 5,
     // 'categoria_id' => '2',
-];}
+//];}
 
 
 $caminho = rtrim($_SERVER['PATH_INFO'], '/');
