@@ -1,18 +1,5 @@
 <?php
 
-require __DIR__ . '/../src/conectar_banco.php';
-
-//$sql = 'INSERT INTO produto (id, nome, sku, unidade_medida_id, valor, quantidade, categoria_id) VALUES ';
-//$statement = $pdo->prepare($sqlInsert);
-//$statement->bindValue(1, $_POST['id']);
-//$statement->bindValue(2, $_POST['nome']);
-//$statement->bindValue(3, $_POST['sku']);
-//$statement->bindValue(4, $_POST['unidade_medida_id']);
-//$statement->bindValue(5, $_POST['valor']);
-//$statement->bindValue(6, $_POST['quantidade']);
-//$statement->bindValue(7, $_POST['categoria_id']);
-
-//var_dump($statement->execute());
 
 ?>
 
@@ -46,15 +33,15 @@ require __DIR__ . '/../src/conectar_banco.php';
                 </div>
                 <div class="xtyle__input">
                     <label >Unidade de Medida:</label>
-                    <select name="unidade medida" value="<?= $produto['unidade medida'] ?>" required>
-                        <option>Un</option>
-                        <option>Kg</option>
-                        <option>g</option>
-                        <option>L</option>
-                        <option>mm</option>
-                        <option>cm</option>
-                        <option>m</option>
-                        <option>m²</option>
+                    <select name="unidade_medida_id" value="<?= $produto['unidade_medida_id'] ?>" required>
+                        <option value=1>Un</option>
+                        <option value=2>Kg</option>
+                        <option value=3>g</option>
+                        <option value=4>L</option>
+                        <option value=5>mm</option>
+                        <option value=6>cm</option>
+                        <option value=7>m</option>
+                        <option value=8 >m²</option>
                     </select>
                 </div>
                 <div class="xtyle__input">
@@ -67,13 +54,13 @@ require __DIR__ . '/../src/conectar_banco.php';
                 </div>
                 <div class="xtyle__input">
                     <label>Categoria:</label>
-                    <select name="categoria" value="<?= $produto['categoria'] ?>" required>
-                        <option>Eletrônicos</option>
-                        <option>Eletrodomésticos</option>
-                        <option>Móveis</option>
-                        <option>Decoração</option>
-                        <option>Vestuário</option>
-                        <option>Outros</option>
+                    <select name="categoria_id" value="<?= $produto['categoria_id'] ?>" required>
+                        <option value=1>Eletrônicos</option>
+                        <option value=2>Eletrodomésticos</option>
+                        <option value=3>Móveis</option>
+                        <option value=4>Decoração</option>
+                        <option value=5>Vestuário</option>
+                        <option value=6>Outros</option>
                     </select>
                 </div>
                 <div class="button">

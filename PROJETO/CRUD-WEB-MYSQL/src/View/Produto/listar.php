@@ -1,31 +1,6 @@
 <?php
 
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../src/conectar_banco.php';
-
-$sql1 = "SELECT * FROM produto";
-$statement = $pdo -> query($sql1);
-$produto = $statement -> fetchAll(PDO::FETCH_ASSOC);
-var_dump($produto);
-
-
-//$statement = $pdo->query(statement: 'SELECT * FROM produto;');
-//$produtoDataList = $statement->fetchAll(fetch_style: PDO::FETCH_ASSOC);
-//$produtoList = [];
-//foreach ($produtoDataList as $produtoData) {
-//    $produtoList[] = new ProdutosController(
-//        $produtoData['id'],
-//        $produtoData['nome'],
-//        $produtoData['sku'],
-//        $produtoData['unidade_medida_id'],
-//        $produtoData['valor'],
-//        $produtoData['quantidade'],
-//        $produtoData['categoria_id'],
-//    );
-//}
-
-//var_dump($studentList);
 
 ?>
 
@@ -55,7 +30,7 @@ var_dump($produto);
             <?php foreach ($produtos as $id => $produto): ?>
             <section class="xtyle_main_caixaconteudo">
                 <div class="xytle_caixa_linha_1">
-                    <h1># <?= $id ?></h1> 
+                    <h1># <?php echo $produto['id']?> </h1> 
                 <div class="xtyle_caixa_linha_1_1">
                     <h1><?php echo $produto['sku'] ?></h1>
                 </div>
@@ -68,10 +43,10 @@ var_dump($produto);
                 </div>
                 <div class="xtyle__botoes__guia">
                     <div class="xytle_caixa_editar">
-                        <a class="xtlye__botao__editar" href="/produtos/editar?id=<?= $id ?>">Editar</a>
+                        <a class="xtlye__botao__editar" href="/produtos/editar?id=<?php echo $produto['id']?>">Editar</a>
                     </div>
                     <div class="xytle_caixa_deletar">
-                        <a class="xtlye__botao__deletar" onclick="return confirm('Deseja deletar o registro?')" href="/produtos/deletar?id=<?= $id ?>" >Deletar</a>
+                        <a class="xtlye__botao__deletar" onclick="return confirm('Deseja deletar o registro?')" href="/produtos/deletar?id=<?php echo $produto['id']?>" >Deletar</a>
                     </div>
                 </div>
             </section>

@@ -22,7 +22,7 @@
     <main>
 
         <section class="xtlye_formulario">
-            <form method="POST" action="/produtos/salvar?id=<?= $produto['id'] ?>">
+            <form method="POST" action="/produtos/atualizar?id=<?= $produto['id'] ?>">
                 <div class="xtyle__input">
                     <label >Nome do Item:</label>
                     <legend><?= $produto['nome'] ?></legend>
@@ -35,16 +35,16 @@
                 </div>
                 <div class="xtyle__input">
                     <label >Unidade de Medida:</label>
-                    <legend><?= $produto['unidade medida'] ?></legend>
-                    <select name="unidade medida" value="<?= $produto['unidade medida'] ?>" required>
-                        <option>Un</option>
-                        <option>Kg</option>
-                        <option>g</option>
-                        <option>L</option>
-                        <option>mm</option>
-                        <option>cm</option>
-                        <option>m</option>
-                        <option>m²</option>
+                    <legend><?= $produto['unidade_medida_id'] ?></legend>
+                    <select name="unidade_medida_id" value="<?= $produto['unidade_medida_id'] ?>" required>
+                        <option value=1>Un</option>
+                        <option value=2>Kg</option>
+                        <option value=3>g</option>
+                        <option value=4>L</option>
+                        <option value=5>mm</option>
+                        <option value=6>cm</option>
+                        <option value=7>m</option>
+                        <option value=8 >m²</option>
                     </select>
                 </div>
                 <div class="xtyle__input">
@@ -59,14 +59,14 @@
                 </div>
                 <div class="xtyle__input">
                     <label>Categoria:</label>
-                    <legend><?= $produto['categoria'] ?></legend>
-                    <select name="categoria" value="<?= $produto['categoria'] ?>">
-                        <option>Eletrônicos</option>
-                        <option>Eletrodomésticos</option>
-                        <option>Móveis</option>
-                        <option>Decoração</option>
-                        <option>Vestuário</option>
-                        <option>Outros</option>
+                    <legend><?= $produto['categoria_id'] ?></legend>
+                    <select name="categoria_id" value="<?= $produto['categoria_id'] ?>" required>
+                        <option value=1>Eletrônicos</option>
+                        <option value=2>Eletrodomésticos</option>
+                        <option value=3>Móveis</option>
+                        <option value=4>Decoração</option>
+                        <option value=5>Vestuário</option>
+                        <option value=6>Outros</option>
                     </select>
                 </div>
                 <div class="button">
