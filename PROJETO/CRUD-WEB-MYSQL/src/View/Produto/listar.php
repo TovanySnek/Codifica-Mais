@@ -50,6 +50,9 @@
                     </div>
                 </div>
             </section>
+            <div class="xytle_img">
+                <img src="" alt="placeholder"> 
+            </div>
             <?php endforeach; ?>
 
         </section>

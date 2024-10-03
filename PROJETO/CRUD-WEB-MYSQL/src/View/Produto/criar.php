@@ -53,6 +53,10 @@
                     <input name="quantidade" required/>
                 </div>
                 <div class="xtyle__input">
+                    <label>Imagem:</label>
+                    <input name="imagem" required/>
+                </div>
+                <div class="xtyle__input">
                     <label>Categoria:</label>
                     <select name="categoria_id" value="<?= $produto['categoria_id'] ?>" required>
                         <option value=1>Eletrônicos</option>
