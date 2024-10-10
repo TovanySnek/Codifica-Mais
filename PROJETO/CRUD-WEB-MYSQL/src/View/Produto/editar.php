@@ -22,7 +22,7 @@
     <main>
 
         <section class="xtlye_formulario">
-            <form method="POST" action="/produtos/atualizar?id=<?= $produto['id'] ?>">
+            <form method="POST" action="/produtos/atualizar?id=<?= $produto['id'] ?>" enctype="multipart/form-data">
                 <div class="xtyle__input">
                     <label >Nome do Item:</label>
                     <legend><?= $produto['nome'] ?></legend>

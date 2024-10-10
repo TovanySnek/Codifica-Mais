@@ -51,7 +51,7 @@
                 </div>
             </section>
             <div class="xytle_img">
-                <img src="" alt="placeholder"> 
+                <img src="<?= $produto['imagem'] ?>" width="100" height="100" alt="Placeholder" />
             </div>
             <?php endforeach; ?>
 

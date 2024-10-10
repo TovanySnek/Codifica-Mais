@@ -22,7 +22,7 @@
     <main>
 
         <section class="xtlye_formulario">
-            <form method="POST" action="/produtos/salvar">
+            <form method="POST" action="/produtos/salvar" enctype="multipart/form-data">
                 <div class="xtyle__input">
                     <label >Nome do Item:</label>
                     <input  type="text" name="nome" required/>
@@ -66,6 +66,9 @@
                         <option value=5>Vestuário</option>
                         <option value=6>Outros</option>
                     </select>
+                </div>
+                <div class="xytle_img">
+                    <input type="file" name="image">
                 </div>
                 <div class="button">
                     <button>Criar Item</button>

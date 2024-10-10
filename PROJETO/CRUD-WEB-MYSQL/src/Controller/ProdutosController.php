@@ -27,7 +27,17 @@ class ProdutosController{
 
         require __DIR__ . '/../conectar_banco.php';
 
-        $dados = 'INSERT INTO produto (nome, sku, unidade_medida_id, valor, quantidade, categoria_id) VALUES (?, ?, ?, ? ,? ,?)';
+        var_dump($_FILES['image']);
+        die();
+        if (!empty($_FILES['image']['name'])) {
+            $imagemPath = '/images/' . $_FILES['image']['name'];
+            move_uploaded_file(from: $_FILES['image']['tmp_name'],  to: __DIR__ . "/../public" . $imagemPath);
+        } else {
+            $imagemPath = '/images/teste.png';
+        }
+
+
+        $dados = 'INSERT INTO produto (nome, sku, unidade_medida_id, valor, quantidade, categoria_id, imagem) VALUES (?, ?, ?, ? ,? ,?, ?)';
         $statement = $pdo->prepare($dados);
         $statement->bindValue(1, $_POST['nome']);
         $statement->bindValue(2, $_POST['sku']);
@@ -35,6 +45,7 @@ class ProdutosController{
         $statement->bindValue(4, $_POST['valor']);
         $statement->bindValue(5, $_POST['quantidade']);
         $statement->bindValue(6, $_POST['categoria_id']);
+        $statement->bindValue(7, $imagemPath);
 
         if ($statement->execute() === true) {
             header("Location: /produtos");
